@@ -87,7 +87,7 @@ Supporting Articles
 Released versions
 -----------------
 
-![OSE pod](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pod.png?raw=true)
+![OSE pods](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pods.png?raw=true)
 
 ![OSE build](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-build.png?raw=true)
 
