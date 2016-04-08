@@ -21,7 +21,7 @@ Install on Red Hat CDK OpenShift Enterprise image
 
 2. Install [OpenShift Client Tools](https://developers.openshift.com/managing-your-applications/client-tools.html) if you have not done so previously.
 
-3. [Download and unzip this demo.](https://github.com/redhatdemocentral/rhcs-coolstore-demo/archive/master.zip)
+3. [Download and unzip this demo.](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/archive/master.zip)
 
 4. Add products to installs directory.
 
@@ -29,10 +29,10 @@ Install on Red Hat CDK OpenShift Enterprise image
 
 6. Login to Cool Store to start exploring a retail web shopping project:
 
-    [http://rhcs-coolstore-persistence-demo.10.1.2.2.xip.io/business-central](http://rhcs-coolstore-persistence-demo.10.1.2.2.xip.io/business-central)
+    [http://rhcs-coolstore-p-demo.10.1.2.2.xip.io/business-central](http://rhcs-coolstore-p-demo.10.1.2.2.xip.io/business-central)
     ( u:erics / p:jbossbrms1! )
 
-    [http://rhcs-coolstore-persistence-demo.10.1.2.2.xip.io/brms-coolstore-demo](http://rhcs-coolstore-persistence-demo.10.1.2.2.xip.io/brms-coolstore-demo)
+    [http://rhcs-coolstore-p-demo.10.1.2.2.xip.io/brms-coolstore-demo](http://rhcs-coolstore-p-demo.10.1.2.2.xip.io/brms-coolstore-demo)
 
 
 Note before running demo:
@@ -54,18 +54,29 @@ This is a good way to look at what is being created during the installation:
     ```
     $ oc get all
 
-    NAME                        TYPE                                           FROM       LATEST
-    rhcs-coolstore-demo         Docker                                         Binary     1
-
-    NAME                        TYPE                                           FROM             STATUS     STARTED         DURATION
-    rhcs-coolstore-demo-1       Docker                                         Binary@56ed14a   Running    2 minutes ago   2m11s
-    
-    NAME                        DOCKER REPO                                    TAGS                  UPDATED
-    developer                   redhatdemocentral/developer                     1.0,jdk8-uid,latest   10 minutes ago
-    rhcs-coolstore-demo         172.30.211.34:5000/rhcs-coolstore-demo/rhcs-coolstore-demo
-
-    NAME                             READY                                     STATUS     RESTARTS   AGE
-    rhcs-coolstore-demo-1-build   1/1                                       Running    0          2m
+    NAME                            TYPE                                                            FROM                  LATEST
+    rhcs-coolstore-p-demo           Docker                                                          Binary                1
+    NAME                            TYPE                                                            FROM                  STATUS     STARTED       DURATION
+    rhcs-coolstore-p-demo-1         Docker                                                          Binary                Complete   2 hours ago   12m43s
+    NAME                            DOCKER REPO                                                     TAGS                  UPDATED
+    developer                       jbossdemocentral/developer                                      latest,1.0,jdk8-uid   2 hours ago
+    rhcs-coolstore-p-demo           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo   latest                2 hours ago
+    NAME                            TRIGGERS                                                        LATEST
+    postgresql                      ConfigChange, ImageChange                                       1
+    rhcs-coolstore-p-demo           ConfigChange, ImageChange                                       2
+    CONTROLLER                      CONTAINER(S)                                                    IMAGE(S)                                                                                                                                SELECTOR                                                                                              REPLICAS                                                           AGE
+    postgresql-1                    postgresql                                                      registry.access.redhat.com/rhscl/postgresql-94-rhel7:latest                                                                             deployment=postgresql-1,deploymentconfig=postgresql,name=postgresql                                   1                                                                  2h
+    rhcs-coolstore-p-demo-1         rhcs-coolstore-p-demo                                           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo@sha256:ec3ae77857a0dca7035ac29218d5fd7d433085d25920d3fdcb20d3379ff00f92   app=rhcs-coolstore-p-demo,deployment=rhcs-coolstore-p-demo-1,deploymentconfig=rhcs-coolstore-p-demo   0                                                                  2h
+    rhcs-coolstore-p-demo-2         rhcs-coolstore-p-demo                                           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo@sha256:ec3ae77857a0dca7035ac29218d5fd7d433085d25920d3fdcb20d3379ff00f92   app=rhcs-coolstore-p-demo,deployment=rhcs-coolstore-p-demo-2,deploymentconfig=rhcs-coolstore-p-demo   1                                                                  2h
+    NAME                            HOST/PORT                                                       PATH                                                                                                                                    SERVICE                                                                                               LABELS                                                             INSECURE POLICY   TLS TERMINATION
+    rhcs-coolstore-p-demo           rhcs-coolstore-p-demo.10.1.2.2.xip.io                                                                                                                                                                   rhcs-coolstore-p-demo                                                                                 app=rhcs-coolstore-p-demo                                                            
+    NAME                            CLUSTER_IP                                                      EXTERNAL_IP                                                                                                                             PORT(S)                                                                                               SELECTOR                                                           AGE
+    postgresql                      172.30.71.80                                                    <none>                                                                                                                                  5432/TCP                                                                                              name=postgresql                                                    2h
+    rhcs-coolstore-p-demo           172.30.127.106                                                  <none>                                                                                                                                  8080/TCP,9990/TCP,9999/TCP                                                                            app=rhcs-coolstore-p-demo,deploymentconfig=rhcs-coolstore-p-demo   2h
+    NAME                            READY                                                           STATUS                                                                                                                                  RESTARTS                                                                                              AGE
+    postgresql-1-7fbdh              1/1                                                             Running                                                                                                                                 0                                                                                                     2h
+    rhcs-coolstore-p-demo-1-build   0/1                                                             Completed                                                                                                                               0                                                                                                     2h
+    rhcs-coolstore-p-demo-2-knzxf   1/1                                                             Running                                                                                                                                 0                                                                                                     2h
 
 
 Supporting Articles
@@ -75,15 +86,12 @@ Supporting Articles
 
 Released versions
 -----------------
-See the tagged releases for the following versions of the product:
 
-- v1.0 - JBoss BRMS 6.2.0-BZ-1299002, JBoss EAP 6.4.4 with Cool Store installed on Red Hat CDK using OpenShift Enterprise image. 
+![OSE pod](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pod.png?raw=true)
 
-![OSE pod](https://github.com/redhatdemocentral/rhcs-coolstore-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pod.png?raw=true)
+![OSE build](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-build.png?raw=true)
 
-![OSE build](https://github.com/redhatdemocentral/rhcs-coolstore-demo/blob/master/docs/demo-images/rhcs-coolstore-p-build.png?raw=true)
+![JBoss BRMS](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/jboss-brms.png?raw=true)
 
-![JBoss BRMS](https://github.com/redhatdemocentral/rhcs-coolstore-demo/blob/master/docs/demo-images/jboss-brms.png?raw=true)
-
-![Decision Table](https://github.com/redhatdemocentral/rhcs-coolstore-demo/blob/master/docs/demo-images/coolstore-decision-table.png?raw=true)
+![Decision Table](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/coolstore-decision-table.png?raw=true)
 
