@@ -88,6 +88,8 @@ Supporting Articles
 
 Released versions
 -----------------
+- v1.0 - JBoss BRMS 6.2.0-BZ-1299002, JBoss EAP 6.4.4 with Cool Store leveraging postgresql persistence installed on Red Hat CDK using OpenShift Enterprise image.
+
 
 ![OSE pods](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pods.png?raw=true)
 
