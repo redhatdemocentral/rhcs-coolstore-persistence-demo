@@ -81,6 +81,8 @@ This is a good way to look at what is being created during the installation:
 
 Supporting Articles
 -------------------
+- [How to add Cloud persistent storage to JBoss Cool Store](http://www.schabell.org/2016/04/howto-add-cloud-persistent-storage-to-jboss-coolstore.html)
+
 - [Ultimate Cloud Guide to Retail in the Cloud with JBoss Cool Store](http://www.schabell.org/2016/03/ultimate-cloud-guide-retail-cloud-jboss-coolstore.html)
 
 
