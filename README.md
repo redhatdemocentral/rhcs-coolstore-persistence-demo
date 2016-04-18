@@ -46,37 +46,15 @@ watch KieScanner in server logs pick up the 3.0.0 version. Now change a shipping
 version to 4.0.0, build and deploy, watch for KieScanner picking up new 4.0.0 version, now web application on next run will use new
 shipping values.
 
-
-Tip & Trick
------------
-This is a good way to look at what is being created during the installation:
+Should your local network DNS not handle the resolution of the above address, giving you page not found errors, you can apply the
+following to your local hosts file:
 
     ```
-    $ oc get all
+    $ sudo vi /etc/hosts
 
-    NAME                            TYPE                                                            FROM                  LATEST
-    rhcs-coolstore-p-demo           Docker                                                          Binary                1
-    NAME                            TYPE                                                            FROM                  STATUS     STARTED       DURATION
-    rhcs-coolstore-p-demo-1         Docker                                                          Binary                Complete   2 hours ago   12m43s
-    NAME                            DOCKER REPO                                                     TAGS                  UPDATED
-    developer                       jbossdemocentral/developer                                      latest,1.0,jdk8-uid   2 hours ago
-    rhcs-coolstore-p-demo           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo   latest                2 hours ago
-    NAME                            TRIGGERS                                                        LATEST
-    postgresql                      ConfigChange, ImageChange                                       1
-    rhcs-coolstore-p-demo           ConfigChange, ImageChange                                       2
-    CONTROLLER                      CONTAINER(S)                                                    IMAGE(S)                                                                                                                                SELECTOR                                                                                              REPLICAS                                                           AGE
-    postgresql-1                    postgresql                                                      registry.access.redhat.com/rhscl/postgresql-94-rhel7:latest                                                                             deployment=postgresql-1,deploymentconfig=postgresql,name=postgresql                                   1                                                                  2h
-    rhcs-coolstore-p-demo-1         rhcs-coolstore-p-demo                                           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo@sha256:ec3ae77857a0dca7035ac29218d5fd7d433085d25920d3fdcb20d3379ff00f92   app=rhcs-coolstore-p-demo,deployment=rhcs-coolstore-p-demo-1,deploymentconfig=rhcs-coolstore-p-demo   0                                                                  2h
-    rhcs-coolstore-p-demo-2         rhcs-coolstore-p-demo                                           172.30.19.20:5000/rhcs-coolstore-p-demo/rhcs-coolstore-p-demo@sha256:ec3ae77857a0dca7035ac29218d5fd7d433085d25920d3fdcb20d3379ff00f92   app=rhcs-coolstore-p-demo,deployment=rhcs-coolstore-p-demo-2,deploymentconfig=rhcs-coolstore-p-demo   1                                                                  2h
-    NAME                            HOST/PORT                                                       PATH                                                                                                                                    SERVICE                                                                                               LABELS                                                             INSECURE POLICY   TLS TERMINATION
-    rhcs-coolstore-p-demo           rhcs-coolstore-p-demo.10.1.2.2.xip.io                                                                                                                                                                   rhcs-coolstore-p-demo                                                                                 app=rhcs-coolstore-p-demo                                                            
-    NAME                            CLUSTER_IP                                                      EXTERNAL_IP                                                                                                                             PORT(S)                                                                                               SELECTOR                                                           AGE
-    postgresql                      172.30.71.80                                                    <none>                                                                                                                                  5432/TCP                                                                                              name=postgresql                                                    2h
-    rhcs-coolstore-p-demo           172.30.127.106                                                  <none>                                                                                                                                  8080/TCP,9990/TCP,9999/TCP                                                                            app=rhcs-coolstore-p-demo,deploymentconfig=rhcs-coolstore-p-demo   2h
-    NAME                            READY                                                           STATUS                                                                                                                                  RESTARTS                                                                                              AGE
-    postgresql-1-7fbdh              1/1                                                             Running                                                                                                                                 0                                                                                                     2h
-    rhcs-coolstore-p-demo-1-build   0/1                                                             Completed                                                                                                                               0                                                                                                     2h
-    rhcs-coolstore-p-demo-2-knzxf   1/1                                                             Running                                                                                                                                 0                                                                                                     2h
+    # add host for CDK demo resolution.
+    10.1.2.2   rhcs-coolstore-p-demo.10.1.2.2.xip.io    rhcs-coolstore-p-demo.10.1.2.2.xip.io
+    ```
 
 
 Supporting Articles
