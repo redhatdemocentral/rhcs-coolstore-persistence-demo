@@ -1,0 +1,12 @@
+id: rhcs-coolstore-persistence
+title: Cloud JBoss Cool Store Persistence Demo
+github_repo_url: https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo
+technologies:
+  - Red Hat CDK
+  - JBoss BRMS
+  - OpenShift Enterprise  
+  - microservices
+summary: Project to automate the installation of JBoss BRMS Cool Store with microservice based persistence using the Red Hat Container Development Kit (CDK) for application development activities on OpenShift.
+level: Beginner
+product: rhcs
+author: Andrew Block, Eric D. Schabell
