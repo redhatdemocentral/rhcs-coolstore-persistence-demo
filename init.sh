@@ -3,6 +3,7 @@ DEMO="Cloud JBoss Cool Store Persistence Demo"
 AUTHORS="Andrew Block, Eric D. Schabell"
 PROJECT="git@github.com:redhatdemocentral/rhcs-coolstore-persistence-demo.git"
 SRC_DIR=./installs
+SUPPORT_DIR=./support
 OPENSHIFT_USER=openshift-dev
 OPENSHIFT_PWD=devel
 BRMS=jboss-brms-installer-6.2.0.GA-redhat-1-bz-1334704.jar
@@ -86,6 +87,17 @@ echo
 echo "Creating a new project..."
 echo
 oc new-project rhcs-coolstore-p-demo
+
+echo
+echo "Creating PostgreSQL Template..."
+echo
+oc create -f "${SUPPORT_DIR}/postgresql-ephemeral-template.json"
+
+if [ $? -ne 0 ]; then
+	echo
+	echo Error occurred during 'oc create' template command!
+	exit
+fi
 
 echo
 echo "Creating PostgreSQL Database..."
