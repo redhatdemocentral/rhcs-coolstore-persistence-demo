@@ -6,6 +6,7 @@ set DEMO=Cloud JBoss Cool Store Persistence Demo
 set AUTHORS=Andrew Block, Eric D. Schabell
 set PROJECT=git@github.com:redhatdemocentral/rhcs-coolstore-demo.git
 set SRC_DIR=%PROJECT_HOME%installs
+set SUPPORT_DIR=%PROJECT_HOME%support
 set OPENSHIFT_USER=openshift-dev
 set OPENSHIFT_PWD=devel
 set BRMS=jboss-brms-installer-6.2.0.GA-redhat-1-bz-1334704.jar
@@ -98,6 +99,17 @@ echo.
 call oc new-project rhcs-coolstore-p-demo 
 
 echo.
+echo "Creating PostgreSQL Template..."
+echo.
+call oc create -f "%SUPPORT_DIR%\postgresql-ephemeral-template.json"
+
+if not "%ERRORLEVEL%" == "0" (
+	echo.
+	echo Error occurred during 'oc create' template command!
+	GOTO :EOF
+)
+
+echo.
 echo Creating PostgreSQL Database...
 echo.
 call oc new-app --template=postgresql-ephemeral -p POSTGRESQL_USER=brms,POSTGRESQL_PASSWORD=brms,POSTGRESQL_DATABASE=brms
@@ -160,7 +172,7 @@ if not "%ERRORLEVEL%" == "0" (
 echo.
 echo Setting PostgreSQL Environments for BRMS...
 echo.
-call oc env dc rhcs-coolstore-demo -e POSTGRESQL_DB_USER=brms -e POSTGRESQL_DB_PASSWORD=brms -e POSTGRESQL_DB_NAME=brms
+call oc env dc rhcs-coolstore-p-demo -e POSTGRESQL_DB_USER=brms -e POSTGRESQL_DB_PASSWORD=brms -e POSTGRESQL_DB_NAME=brms
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
