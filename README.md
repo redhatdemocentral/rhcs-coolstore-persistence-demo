@@ -72,3 +72,5 @@ Released versions
 
 ![Decision Table](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/coolstore-decision-table.png?raw=true)
 
+![Cloud Suite](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-arch.png?raw=true)
+
