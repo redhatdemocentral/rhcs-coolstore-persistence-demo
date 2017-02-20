@@ -149,7 +149,7 @@ fi
 echo
 echo "Creating PostgreSQL Database..."
 echo
-oc new-app --template=postgresql-ephemeral -p POSTGRESQL_USER=brms,POSTGRESQL_PASSWORD=brms,POSTGRESQL_DATABASE=brms
+oc new-app --template=postgresql-ephemeral -p POSTGRESQL_USER=brms -p POSTGRESQL_PASSWORD=brms -p POSTGRESQL_DATABASE=brms
 
 if [ $? -ne 0 ]; then
 	echo
