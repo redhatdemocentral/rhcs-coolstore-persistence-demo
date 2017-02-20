@@ -128,7 +128,7 @@ if not "%ERRORLEVEL%" == "0" (
 echo.
 echo Creating PostgreSQL Database...
 echo.
-call oc new-app --template=postgresql-ephemeral -p POSTGRESQL_USER=brms,POSTGRESQL_PASSWORD=brms,POSTGRESQL_DATABASE=brms
+call oc new-app --template=postgresql-ephemeral -p POSTGRESQL_USER=brms -p POSTGRESQL_PASSWORD=brms -p POSTGRESQL_DATABASE=brms
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
