@@ -81,7 +81,7 @@ if exist %SRC_DIR%\%EAP% (
   echo Product EAP sources are present...
   echo.
 ) else (
-  echo Need to download %EAP% package from the Customer Support Portal
+  echo Need to download %EAP% package from https://developers.redhat.com/products/eap/download
   echo and place it in the %SRC_DIR% directory to proceed...
   echo.
   GOTO :EOF
@@ -91,7 +91,8 @@ if exist %SRC_DIR%\%BRMS% (
 	echo JBoss BRMS product sources, %BRMS% present...
 	echo.
 ) else (
-	echo Need to download %BRMS% package from the Customer Support Portal and place it in the %SRC_DIR% directory to proceed...
+	echo Need to download %BRMS% package from https://developers.redhat.com/products/brms/download
+  echo and place it in the %SRC_DIR% directory to proceed...
 	echo.
 	GOTO :EOF
 )
