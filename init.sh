@@ -218,7 +218,7 @@ fi
 echo
 echo "Creating an externally facing route by exposing a service..."
 echo
-oc expose service rhcs-coolstore-p-demo --hostname=rhcs-coolstore-p-demo.$HOST_IP.xip.io
+oc expose service rhcs-coolstore-p-demo --port=8080 --hostname=rhcs-coolstore-p-demo.$HOST_IP.xip.io
 
 if [ $? -ne 0 ]; then
 	echo
