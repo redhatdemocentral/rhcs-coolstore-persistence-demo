@@ -119,9 +119,7 @@ Released versions
 
 ![OSE pods](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-pods.png?raw=true)
 
-![OSE build](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/rhcs-coolstore-p-build.png?raw=true)
-
-![JBoss BRMS](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/jboss-brms.png?raw=true)
+![JBoss BRMS](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/coolstore-shoppingcart-2.png?raw=true)
 
 ![Decision Table](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/blob/master/docs/demo-images/coolstore-decision-table.png?raw=true)
 
