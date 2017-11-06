@@ -58,7 +58,6 @@ RUN mvn install:install-file -Dfile=/opt/jboss/brms-projects/libs/coolstore-2.0.
   && rm -rf /opt/jboss/brms-projects \
   && sed -i 's/ExampleDS/PostgresDS/g' $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/META-INF/persistence.xml \
   && sed -i 's/H2Dialect/PostgreSQLDialect/g' $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/META-INF/persistence.xml \
-  && sed -i 's/H2Dialect/PostgreSQLDialect/g' $BRMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/META-INF/persistence.xml \
   && chmod +x /opt/jboss/start.sh 
 
 # Run as JBoss 
