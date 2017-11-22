@@ -20,6 +20,8 @@ Install on OpenShift
 
   - [OCP Install Demo](https://github.com/redhatdemocentral/ocp-install-demo)
 
+  - [Red Hat Container Development Kit (CDK) using Minishift](https://developers.redhat.com/products/cdk/overview)
+
   - or your own OpenShift installation.
 
 2. [Download and unzip this demo.](https://github.com/redhatdemocentral/rhcs-coolstore-persistence-demo/archive/master.zip)
@@ -44,16 +46,12 @@ Login to Cool Store to start exploring a retail web shopping project (the addres
 5. Want to build the Cool Store demo from scratch? Try these hands-on <a href="https://bpmworkshop.github.io/#/4" target="_blank">online workshops</a>.
 
 
-Note before running demo:
--------------------------
-This project can be installed on any OpenShift platform, such as OpenShift Container Platform.
-It's possible to install it on any available installation by pointing this installer to an OpenShift IP address:
-```
-  $ ./init.sh IP
-```
-
+Notes:
+------
 If for any reason the installation breaks or you want a new JBoss BRMS installation, just remove the project rhcs-brms-install-demo
 entry in the OpenShift console and re-run the installation.
+
+-----
 
 To clone a repository in the running container, the following actions would need to occur from a developer's machine.
 
@@ -94,6 +92,8 @@ Supporting Articles
 
 Released versions
 -----------------
+- v1.7 - JBoss BRMS 6.4.0 and JBoss EAP 7.0.0 with Cool Store leveraging postgresql persistence and available on CDK with Minishift.
+
 - v1.6 - JBoss BRMS 6.4.0 and JBoss EAP 7.0.0 with Cool Store leveraging postgresql persistence with OpenShift genereated routes and service URLs.
 
 - v1.5 - JBoss BRMS 6.4.0 and JBoss EAP 7.0.0 with Cool Store leveraging postgresql persistence installed on any given OpenShift installation and loading mulitple projects.
