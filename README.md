@@ -83,6 +83,8 @@ To clone a repository in the running container, the following actions would need
 
 Supporting Articles
 -------------------
+- [10 Steps to Cloud Happiness: Step 7 - Retail Web Shop](http://www.schabell.org/2017/11/10-steps-to-cloud-happiness-step-7.html)
+
 - [Retail in the Cloud - Business rule integration in retail with Vaadin 8.1](http://www.schabell.org/2017/08/retail-in-cloud-business-rule.html)
 
 - [How to add Cloud persistent storage to JBoss Cool Store](http://www.schabell.org/2016/04/howto-add-cloud-persistent-storage-to-jboss-coolstore.html)
