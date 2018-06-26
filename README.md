@@ -1,3 +1,6 @@
+Update: June 2018 moved to [Gitlab](https://gitlab.com/redhatdemocentral/rhcs-coolstore-persistence-demo).
+
+
 App Dev Cloud with JBoss Cool Store Persistence Demo 
 ==========================================
 This demo is to install JBoss Cool Store in the Cloud with PostgreSQL data persistence on any OpenShift Container Platform. It delivers a fully functioning JBoss Cool Store containerized on OSE and backed by a persistent data store.
